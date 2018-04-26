@@ -1,4 +1,5 @@
 const User = require('./user')
+const Ingredient = require('./ingredient')
 
 const Cocktail = require('./cocktail')
 /**
@@ -17,5 +18,6 @@ const Cocktail = require('./cocktail')
 
 
 module.exports = {
-  User
+  User,
+  Ingredient
 }
