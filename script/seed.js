@@ -10,7 +10,7 @@
  * Now that you've got the main idea, check it out in practice below!
  */
 const db = require('../server/db')
-const {User} = require('../server/db/models')
+const {User, Cocktail, Ingredient} = require('../server/db/models')
 
 async function seed () {
   await db.sync({force: true})
@@ -22,7 +22,78 @@ async function seed () {
     User.create({email: 'cody@email.com', password: '123'}),
     User.create({email: 'murphy@email.com', password: '123'})
   ])
-  // Wowzers! We can even `await` on the right-hand side of the assignment operator
+
+//Try to refactor to have cocktails & ingredients as separate promise arrays
+  const [martini, oldFashioned] = await Promise.all([
+    Cocktail.create({
+      name: 'Dirty Martini',
+      imageUrl: 'https://foodchannel.com/recipes/mad-men-cookbooks-martini',
+      flavor: 'savory',
+      recipe: 'Chill a cocktail glass in the freezer. Add the ingredients into a glass filled with ice. Stir and strain into a chilled cocktail glass. Garnish with olives and sip away!'
+    }),
+    Cocktail.create({
+      name: 'Old Fashioned',
+      imageUrl: 'https://www.vindulge.com/the-smoky-old-man-a-cocktail-recipe/',
+      flavor: 'savory',
+      recipe: 'Place the sugar in your glass, and saturate with bitters. Add a dash of water and muddle until dissolved. Fill with ice cubes and add the whiskey. Garnish with orange peel and a cocktail cherry!'
+    })
+  ]);
+
+  const [gin, dryVermouth, oliveBrine, olives, bourbon, angostura, sugar, orange, cherry] = await Promise.all([
+    Ingredient.create({
+      name: 'Gin',
+      category: 'Liquor'
+    }),
+    Ingredient.create({
+      name: 'Dry vermouth',
+      category: 'Liquor'
+    }),
+    Ingredient.create({
+      name: 'Olive brine',
+      category: 'Fruit/Vegetable'
+    }),
+    Ingredient.create({
+      name: 'Olives',
+      category: 'Fruit/Vegetable'
+    }),
+    Ingredient.create({
+      name: 'Bourbon',
+      category: 'Liquor'
+    }),
+    Ingredient.create({
+      name: 'Angostura bitters',
+      category: 'Bitters'
+    }),
+    Ingredient.create({
+      name: 'Sugar',
+      category: 'Herb'
+    }),
+    Ingredient.create({
+      name: 'Orange',
+      category: 'Fruit/Vegetable'
+    }),
+    Ingredient.create({
+      name: 'Cocktail cherry',
+      category: 'Fruit/Vegetable'
+    })
+  ]);
+
+  await Promise.all([
+    martini.addIngredient(gin, {through: {measurement: '2.5 oz'}}),
+    martini.addIngredient(dryVermouth, {through: {measurement: '0.5 oz'}}),
+    martini.addIngredient(oliveBrine, {through: {measurement: '0.5 oz'}}),
+    martini.addIngredient(olives, {through: {measurement: '2'}})
+  ])
+
+  await Promise.all([
+    oldFashioned.addIngredient(bourbon, {through: {measurement: '2 oz'}}),
+    oldFashioned.addIngredient(angostura, {through: {measurement: '4 dashes'}}),
+    oldFashioned.addIngredient(sugar, {through: {measurement: '1 tsp'}}),
+    oldFashioned.addIngredient(orange, {through: {measurement: '1 peel of'}}),
+    oldFashioned.addIngredient(cherry, {through: {measurement: '1'}})
+  ])
+
+        // Wowzers! We can even `await` on the right-hand side of the assignment operator
   // and store the result that the promise resolves to in a variable! This is nice!
   console.log(`seeded ${users.length} users`)
   console.log(`seeded successfully`)

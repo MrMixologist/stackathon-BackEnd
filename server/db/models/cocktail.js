@@ -18,6 +18,10 @@ const Cocktail = db.define('cocktail', {
   },
   flavor: {
     type: Sequelize.ENUM('fruity', 'sour', 'sweet', 'savory')
+  },
+  recipe: {
+    type: Sequelize.TEXT,
+    allowNull: false,
   }
 });
 
