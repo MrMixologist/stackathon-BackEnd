@@ -235,7 +235,6 @@ async function seed () {
     moscowMule.addIngredient(vodka, {through: {measurement: '1.5 oz'}}),
     moscowMule.addIngredient(gingerBeer, {through: {measurement: '0.5 cup'}}),
     moscowMule.addIngredient(lime, {through: {measurement: '1 lime'}}),
-    moscowMule.addIngredient(cranberryJuice, {through: {measurement: '1 dash'}})
   ]);
 
   await Promise.all([
