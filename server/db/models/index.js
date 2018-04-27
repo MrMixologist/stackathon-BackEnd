@@ -1,6 +1,7 @@
-const User = require('./user')
-const Ingredient = require('./ingredient')
-const Cocktail = require('./cocktail')
+const User = require('./user');
+const Ingredient = require('./ingredient');
+const Cocktail = require('./cocktail');
+const CocktailIngredient = require('./cocktail-ingredient');
 /**
  * If we had any associations to make, this would be a great place to put them!
  * ex. if we had another model called BlogPost, we might say:
@@ -15,11 +16,13 @@ const Cocktail = require('./cocktail')
  * instead of: const User = require('../db/models/user')
  */
 
-Cocktail.belongsToMany(Ingredient, { through: 'Cocktail Ingredients'});
-Ingredient.belongsToMany(Cocktail, { through: 'Cocktail Ingredients'});
+Cocktail.belongsToMany(Ingredient, { through: CocktailIngredient, foreignKey: 'cocktailId'});
+Ingredient.belongsToMany(Cocktail, { through: CocktailIngredient, foreignKey: 'ingredientId'});
+
 
 module.exports = {
   User,
   Ingredient,
-  Cocktail
-}
+  Cocktail,
+  CocktailIngredient
+};
