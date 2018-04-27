@@ -24,7 +24,7 @@ async function seed () {
   ])
 
 //Try to refactor to have cocktails & ingredients as separate promise arrays
-  const [cosmopolitan, dirtyMartini, oldFashioned, manhattan, margarita, mojito, moscowMule, mintJulep, tomCollins, whiskeySour] = await Promise.all([
+  const [cosmopolitan, dirtyMartini, gimlet, oldFashioned, manhattan, margarita, mojito, moscowMule, mintJulep, tomCollins, whiskeySour] = await Promise.all([
     Cocktail.create({
       name: 'Cosmopolitan',
       imageUrl: 'https://i.pinimg.com/originals/7d/26/32/7d263269f2802bf323a491c44892975b.jpg',
@@ -56,7 +56,7 @@ async function seed () {
       recipe: 'Chill a cocktail glass. Add all the ingredients into a mixing glass filled with ice and stir well. Strain into your glass, and garnish with a big apple -- oops - I mean cherry!'
     }),
     Cocktail.create({
-      name: 'Margaita',
+      name: 'Margarita',
       imageUrl: 'https://thecookful.com/wp-content/uploads/2015/09/Better-Margarita-portrait-680.jpg',
       flavor: 'savory',
       recipe: 'Rub a lime wedge around the rim of a glass and dip the rim in salt. Fill a shaker with ice and add the tequila, triple sec, and lime juice from 1 lime. Shake well. Strain the cocktail over the glass and garnish your drink with a lime wedge. Time to fiesta!'
@@ -257,6 +257,12 @@ async function seed () {
     tomCollins.addIngredient(simpleSyrup, {through: {measurement: '0.75 oz'}}),
     tomCollins.addIngredient(lemon, {through: {measurement: '1'}}),
     tomCollins.addIngredient(clubSoda, {through: {measurement: '1.5 oz'}})
+  ]);
+
+  await Promise.all([
+    gimlet.addIngredient(gin, {through: {measurement: '2.5 oz'}}),
+    gimlet.addIngredient(simpleSyrup, {through: {measurement: '0.5 oz'}}),
+    gimlet.addIngredient(lime, {through: {measurement: '1'}}),
   ]);
 
         // Wowzers! We can even `await` on the right-hand side of the assignment operator
