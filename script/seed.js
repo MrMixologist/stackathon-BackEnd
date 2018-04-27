@@ -40,7 +40,7 @@ async function seed () {
     Cocktail.create({
       name: 'Gimlet',
       imageUrl: 'http://georgianbayspiritco.com/wp-content/uploads/2018/01/gin-recipe-georgian-bay-gimlet.jpg',
-      flavor: 'fresh/fruity',
+      flavor: 'fruity/fresh',
       recipe: 'Chill a cocktail glass. Add the ingredients into a cocktail shaker, with ice. Shake and strain into your chilled glass. Garnish with a lime wheel. Now gimme your gimlet!'
     }),
     Cocktail.create({
