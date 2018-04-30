@@ -65,7 +65,7 @@ async function seed () {
       name: 'Mojito',
       imageUrl: 'http://emerils.com/sites/default/files/tweaked%20mojito.JPG',
       flavor: 'fruity/fresh',
-      recipe: `Lightly muddle 5 mint leaves in a shaker to start. Add the simple syrup, lime juice, and rum. Shake well and pour (unstrained) into a glass. Top with club soda and garnish with the last mint leave. As they as say, mo' money, Mojitos.`
+      recipe: `Lightly muddle 5 mint leaves in a shaker to start. Add the simple syrup, lime juice, and rum. Shake well and pour (unstrained) into a glass. Top with club soda and garnish with the last mint leave. As I always say, mo' money, Mo' jitos.`
     }),
     Cocktail.create({
       name: 'Moscow Mule',
