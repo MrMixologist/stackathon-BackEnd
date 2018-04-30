@@ -227,14 +227,14 @@ async function seed () {
   await Promise.all([
     cosmopolitan.addIngredient(citrusVodka, {through: {measurement: '1.5 oz'}}),
     cosmopolitan.addIngredient(tripleSec, {through: {measurement: '1 oz'}}),
-    cosmopolitan.addIngredient(lime, {through: {measurement: '0.5 lime'}}),
+    cosmopolitan.addIngredient(lime, {through: {measurement: '0.5'}}),
     cosmopolitan.addIngredient(cranberryJuice, {through: {measurement: '1 dash'}})
   ]);
 
   await Promise.all([
     moscowMule.addIngredient(vodka, {through: {measurement: '1.5 oz'}}),
     moscowMule.addIngredient(gingerBeer, {through: {measurement: '0.5 cup'}}),
-    moscowMule.addIngredient(lime, {through: {measurement: '1 lime'}}),
+    moscowMule.addIngredient(lime, {through: {measurement: '1'}}),
   ]);
 
   await Promise.all([
