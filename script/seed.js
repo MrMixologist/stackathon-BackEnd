@@ -100,91 +100,91 @@ async function seed () {
     }),
     Ingredient.create({
       name: 'Bourbon',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Cocktail cherry',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Citrus Vodka',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Club soda',
-      category: 'Mixer'
+      category: 'Mixers'
     }),
     Ingredient.create({
       name: 'Cranberry juice',
-      category: 'Mixer'
+      category: 'Mixers'
     }),
     Ingredient.create({
       name: 'Dry vermouth',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Gin',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Ginger beer',
-      category: 'Mixer'
+      category: 'Mixers'
     }),
     Ingredient.create({
       name: 'Lemon',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Lime',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Mint leaves',
-      category: 'Herb'
+      category: 'Herbs'
     }),
     Ingredient.create({
       name: 'Olive brine',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Olives',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Orange',
-      category: 'Fruit/Vegetable'
+      category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
       name: 'Rye',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Simple Syrup',
-      category: 'Sweetener'
+      category: 'Sweeteners'
     }),
     Ingredient.create({
       name: 'Sweet Vermouth',
-      category: 'Sweetener'
+      category: 'Sweeteners'
     }),
     Ingredient.create({
       name: 'Sugar',
-      category: 'Sweetener'
+      category: 'Sweeteners'
     }),
     Ingredient.create({
       name: 'Tequila',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Triple Sec',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'Vodka',
-      category: 'Liquor'
+      category: 'Liquors'
     }),
     Ingredient.create({
       name: 'White Rum',
-      category: 'Liquor'
+      category: 'Liquors'
     })
   ]);
 
