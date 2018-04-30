@@ -117,7 +117,7 @@ async function seed () {
     })
   ]);
 
-  const [angostura, bourbon, campari, champagne, cherry, citrusVodka, clubSoda, cranberryJuice, dryVermouth, gin, gingerBeer, grapefruit, lemon, lime, mint, oliveBrine, olives, orange, orangeJuice, rye, simpleSyrup, sweetVermouth, sugar, tequila, tripleSec, vodka, whiteRum] = await Promise.all([
+  const [angostura, basil, bourbon, campari, champagne, cherry, citrusVodka, clubSoda, cranberryJuice, dryVermouth, gin, gingerBeer, grapefruit, lemon, lime, mint, oliveBrine, olives, orange, orangeJuice, rye, simpleSyrup, sweetVermouth, sugar, tequila, thyme, tripleSec, vodka, whiteRum] = await Promise.all([
     Ingredient.create({
       name: 'Angostura bitters',
       category: 'Bitters'
