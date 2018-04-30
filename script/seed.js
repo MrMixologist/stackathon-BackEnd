@@ -24,7 +24,7 @@ async function seed () {
   ])
 
 //Try to refactor to have cocktails & ingredients as separate promise arrays
-  const [cosmopolitan, dirtyMartini, gimlet, oldFashioned, manhattan, margarita, mojito, moscowMule, mintJulep, tomCollins, whiskeySour] = await Promise.all([
+  const [cosmopolitan, dirtyMartini, gimlet, oldFashioned, manhattan, margarita, mojito, moscowMule, mimosa, mintJulep, negroni, paloma, screwDriver, tomCollins, whiskeySour] = await Promise.all([
     Cocktail.create({
       name: 'Cosmopolitan',
       imageUrl: 'https://i.pinimg.com/originals/7d/26/32/7d263269f2802bf323a491c44892975b.jpg',
@@ -35,7 +35,7 @@ async function seed () {
       name: 'Dirty Martini',
       imageUrl: 'https://allentownbartenderschool.files.wordpress.com/2016/02/dirty-martini.jpeg?w=1400',
       flavor: 'savory',
-      recipe: 'Chill a cocktail glass in the freezer. Add the ingredients into a glass filled with ice. Stir and strain into a chilled cocktail glass. Garnish with olives and sip away!'
+      recipe: 'Chill a cocktail glass in the freezer. Add the ingredients into a glass filled with ice. Stir and strain into your chilled glass. Garnish with olives and sip away! (Dirtiness not included.)'
     }),
     Cocktail.create({
       name: 'Gimlet',
@@ -47,7 +47,7 @@ async function seed () {
       name: 'Old Fashioned',
       imageUrl: 'https://cdn.liquor.com/wp-content/uploads/2017/08/08074649/6-Rules-for-Drinking-Bourbone-bourbon-old-fashioned-720x720-slideshow.jpg',
       flavor: 'savory',
-      recipe: 'Place the sugar in your glass, and saturate with bitters. Add a dash of water and muddle until dissolved. Fill with ice cubes and add the whiskey. Garnish with orange peel and a cocktail cherry!'
+      recipe: 'Place the sugar in your glass, and saturate with bitters. Add a dash of water and muddle until dissolved. Fill with ice cubes and add the whiskey. Call me old-fashioned, but I always garnish with orange peel and a cocktail cherry!'
     }),
     Cocktail.create({
       name: 'Manhattan',
@@ -65,7 +65,7 @@ async function seed () {
       name: 'Mojito',
       imageUrl: 'http://emerils.com/sites/default/files/tweaked%20mojito.JPG',
       flavor: 'fruity/fresh',
-      recipe: `Lightly muddle 5 mint leaves in a shaker to start. Add the simple syrup, lime juice, and rum. Shake well and pour (unstrained) into a glass. Top with club soda and garnish with the last mint leave. You'll be feeling refreshed in no time.`
+      recipe: `Lightly muddle 5 mint leaves in a shaker to start. Add the simple syrup, lime juice, and rum. Shake well and pour (unstrained) into a glass. Top with club soda and garnish with the last mint leave. As they as say, mo' money, Mojitos.`
     }),
     Cocktail.create({
       name: 'Moscow Mule',
@@ -74,10 +74,34 @@ async function seed () {
       recipe: `Add vodka and squeeze a half of a lime's juice into a mug (copper if you have). Add ice and ginger beer. Stir to combine. As a garnish, drop in a lime wedge. Easy peasy ginger squeezy.`
     }),
     Cocktail.create({
+      name: 'Mimosa',
+      imageUrl: 'http://cdn.crunchycreamysweet.com/wp-content/uploads/2018/04/creamsicle-mimosa-5.jpg',
+      flavor: 'fruity/fresh',
+      recipe: `Pour champagne into a flute glass and fill with OJ to taste. Gotta get in that vitamin C for your Saturday brunching festivities.`
+    }),
+    Cocktail.create({
       name: 'Mint Julep',
       imageUrl: 'https://cdn.liquor.com/wp-content/uploads/2011/05/mint-julep1.jpg',
       flavor: 'fruity/fresh',
       recipe: `Stir the club soda and sugar until sugar just begins to dissolve. Add the mint leaves and, gently pressing them into the sugar syrup until slightly darkened, using glass muddler or back of large spoon. Add the bourbon to the glass and fill with crushed ice, stirring briefly. Tuck mint sprigs into top of cup, and you'll be feeling like you're at the Kentucky Derby in no time!`
+    }),
+    Cocktail.create({
+      name: 'Negroni',
+      imageUrl: 'http://www.recipe4living.com/assets/itemimages/400/400/3/default_f8831d77152633267e8111cd9ec1f91b_dreamstime_s_74077571.jpg',
+      flavor: 'savory',
+      recipe: `Pour ingredients into a mixing glass filled with ice. Stir well and strain into cocktail glass of choice. Garnish with an orange twist. Good luck negron-ly drinking one!`
+    }),
+    Cocktail.create({
+      name: 'Paloma',
+      imageUrl: 'https://statik-2bf0.kxcdn.com/wp-content/uploads/2016/05/Paloma-Cocktail-Recipe.jpg',
+      flavor: 'fruity/fresh',
+      recipe: 'Rub half of the rim of your glass with grapefruit wedge and then dip in salt. Mix 2 oz of fresh grapefruit juice, 1 tbps fresh lime juice, and sugar in glass, stirring until sugar is dissolved. Stir in tequila, add ice, and top with the club soda. No need to wait for Cinco De Mayo to enjoy this classic!'
+    }),
+    Cocktail.create({
+      name: 'Screwdriver',
+      imageUrl: 'https://www.inspiredtaste.net/wp-content/uploads/2011/10/Screwdriver-Cocktail-Recipe-2-1200.jpg',
+      flavor: 'fruity/fresh',
+      recipe: `Add the vodka to a glass filled with ice. Top with orange juice to taste! Now this is a recipe to always keep in your toolbox.`
     }),
     Cocktail.create({
       name: 'Tom Collins',
@@ -93,13 +117,25 @@ async function seed () {
     })
   ]);
 
-  const [angostura, bourbon, cherry, citrusVodka, clubSoda, cranberryJuice, dryVermouth, gin, gingerBeer, lemon, lime, mint, oliveBrine, olives, orange, rye, simpleSyrup, sweetVermouth, sugar, tequila, tripleSec, vodka, whiteRum] = await Promise.all([
+  const [angostura, bourbon, campari, champagne, cherry, citrusVodka, clubSoda, cranberryJuice, dryVermouth, gin, gingerBeer, grapefruit, lemon, lime, mint, oliveBrine, olives, orange, orangeJuice, rye, simpleSyrup, sweetVermouth, sugar, tequila, tripleSec, vodka, whiteRum] = await Promise.all([
     Ingredient.create({
       name: 'Angostura bitters',
       category: 'Bitters'
     }),
     Ingredient.create({
+      name: 'Basil',
+      category: 'Herbs'
+    }),
+    Ingredient.create({
       name: 'Bourbon',
+      category: 'Liquors'
+    }),
+    Ingredient.create({
+      name: 'Campari',
+      category: 'Liquors'
+    }),
+    Ingredient.create({
+      name: 'Champagne',
       category: 'Liquors'
     }),
     Ingredient.create({
@@ -131,6 +167,10 @@ async function seed () {
       category: 'Mixers'
     }),
     Ingredient.create({
+      name: 'Grapefruit',
+      category: 'Fruits/Vegetables'
+    }),
+    Ingredient.create({
       name: 'Lemon',
       category: 'Fruits/Vegetables'
     }),
@@ -155,6 +195,10 @@ async function seed () {
       category: 'Fruits/Vegetables'
     }),
     Ingredient.create({
+      name: 'Orange Juice',
+      category: 'Mixers'
+    }),
+    Ingredient.create({
       name: 'Rye',
       category: 'Liquors'
     }),
@@ -173,6 +217,10 @@ async function seed () {
     Ingredient.create({
       name: 'Tequila',
       category: 'Liquors'
+    }),
+    Ingredient.create({
+      name: 'Thyme',
+      category: 'Herbs'
     }),
     Ingredient.create({
       name: 'Triple Sec',
@@ -262,6 +310,31 @@ async function seed () {
     gimlet.addIngredient(gin, {through: {measurement: '2.5 oz'}}),
     gimlet.addIngredient(simpleSyrup, {through: {measurement: '0.5 oz'}}),
     gimlet.addIngredient(lime, {through: {measurement: '1'}}),
+  ]);
+
+  await Promise.all([
+    paloma.addIngredient(grapefruit, {through: {measurement: '1'}}),
+    paloma.addIngredient(sugar, {through: {measurement: '1 tsp'}}),
+    paloma.addIngredient(lime, {through: {measurement: '1'}}),
+    paloma.addIngredient(clubSoda, {through: {measurement: '2 oz'}}),
+    paloma.addIngredient(tequila, {through: {measurement: '2 oz'}}),
+  ]);
+
+  await Promise.all([
+    screwDriver.addIngredient(vodka, {through: {measurement: '2 oz'}}),
+    screwDriver.addIngredient(orangeJuice, {through: {measurement: '~ 2 oz'}}),
+  ]);
+
+  await Promise.all([
+    mimosa.addIngredient(champagne, {through: {measurement: '4 oz'}}),
+    mimosa.addIngredient(orangeJuice, {through: {measurement: '2 oz'}}),
+  ]);
+
+  await Promise.all([
+    negroni.addIngredient(gin, {through: {measurement: '1 oz'}}),
+    negroni.addIngredient(campari, {through: {measurement: '1 oz'}}),
+    negroni.addIngredient(sweetVermouth, {through: {measurement: '1 oz'}}),
+    negroni.addIngredient(orange, {through: {measurement: '1 twist'}}),
   ]);
 
         // Wowzers! We can even `await` on the right-hand side of the assignment operator
