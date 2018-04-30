@@ -11,7 +11,7 @@ const Ingredient = db.define('ingredient', {
     }
   },
   category: {
-    type: Sequelize.ENUM('Liquor', 'Mixer', 'Herb', 'Fruit/Vegetable', 'Sweetener', 'Bitters'),
+    type: Sequelize.ENUM('Liquors', 'Mixers', 'Herbs', 'Fruits/Vegetables', 'Sweeteners', 'Bitters'),
     allowNull: false,
     validate: {
       notEmpty: true
