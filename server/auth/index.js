@@ -1,9 +1,12 @@
 const router = require('express').Router()
-const User = require('../db/models/user')
+const { User, Cocktail } = require('../db/models')
 module.exports = router
 
 router.put('/login', (req, res, next) => {
-  User.findOne({where: {email: req.body.email}})
+  User.findOne({
+    where: {email: req.body.email},
+    include: [{ model: Cocktail }]
+    })
     .then(user => {
       if (!user) {
         console.log('No such user found:', req.body.email)
