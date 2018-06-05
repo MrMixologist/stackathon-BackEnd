@@ -16,9 +16,13 @@ const CocktailIngredient = require('./cocktail-ingredient');
  * instead of: const User = require('../db/models/user')
  */
 
+// ingredient and cocktail relationships
 Cocktail.belongsToMany(Ingredient, { through: CocktailIngredient, foreignKey: 'cocktailId'});
 Ingredient.belongsToMany(Cocktail, { through: CocktailIngredient, foreignKey: 'ingredientId'});
 
+//user and cocktail relationships
+Cocktail.belongsToMany(User, { through: 'FavoriteCocktails'});
+User.belongsToMany(Cocktail, { through: 'FavoriteCocktails'});
 
 module.exports = {
   User,
