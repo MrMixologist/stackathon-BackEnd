@@ -2,7 +2,7 @@ const router = require('express').Router()
 const User = require('../db/models/user')
 module.exports = router
 
-router.post('/login', (req, res, next) => {
+router.put('/login', (req, res, next) => {
   User.findOne({where: {email: req.body.email}})
     .then(user => {
       if (!user) {
@@ -32,7 +32,7 @@ router.post('/signup', (req, res, next) => {
     })
 })
 
-router.post('/logout', (req, res) => {
+router.delete('/logout', (req, res) => {
   req.logout()
   req.session.destroy()
   res.redirect('/')
